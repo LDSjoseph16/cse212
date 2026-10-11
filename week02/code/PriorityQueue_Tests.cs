@@ -1,8 +1,9 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 [TestClass]
 public class PriorityQueue_Tests
 {
     // Test Result Summary: PASSED. 
-    // Requirement 1: Enqueue adds items to the back of the queue correctly.
+    // Requirement 1: Enqueue adds items to the queue correctly.
     [TestMethod]
     public void TestPriorityQueue_Enqueue()
     {
@@ -21,7 +22,7 @@ public class PriorityQueue_Tests
         pq.Enqueue("Low", 1);
         pq.Enqueue("High", 10);
         pq.Enqueue("Medium", 5);
-        
+
         string result = pq.Dequeue();
         Assert.AreEqual("High", result);
     }
@@ -49,7 +50,7 @@ public class PriorityQueue_Tests
     public void TestPriorityQueue_EmptyException()
     {
         var pq = new PriorityQueue();
-        
+
         try
         {
             pq.Dequeue();

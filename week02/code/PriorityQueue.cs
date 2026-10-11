@@ -15,13 +15,11 @@
             throw new InvalidOperationException("The queue is empty.");
         }
 
-        // Find the index of the item with the highest priority (highest integer value)
-        // Use strict '>' to ensure FIFO tie-breaking (the first item encountered wins ties)
+        // Find the index of the item with the highest priority
         int highPriorityIndex = 0;
         for (int i = 1; i < _queue.Count; i++)
         {
-            if (_queue[i].Priority > _queue[_highPriorityIndex].Priority) // Wait, let's keep index clean:
-            // _queue[i].Priority > _queue[highPriorityIndex].Priority
+            if (_queue[i].Priority > _queue[highPriorityIndex].Priority)
             {
                 highPriorityIndex = i;
             }
